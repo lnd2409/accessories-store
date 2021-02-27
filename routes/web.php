@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/quan-tri', function () {
+    return view('admin.index');
 });
