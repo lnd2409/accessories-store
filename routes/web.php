@@ -14,3 +14,7 @@
 Route::get('/quan-tri', function () {
     return view('admin.index');
 });
+
+Route::get('/', function () {
+    return view("client.index");
+});
