@@ -13,7 +13,7 @@ class CreateHoaDonsTable extends Migration
      */
     public function up()
     {
-        Schema::create('hoa_dons', function (Blueprint $table) {
+        Schema::create('hoa_don', function (Blueprint $table) {
             $table->bigIncrements('hd_id');
             $table->dateTime('hd_ngaytao');
             $table->float('hd_tongtien');
@@ -21,7 +21,7 @@ class CreateHoaDonsTable extends Migration
             $table->timestamps();
 
             $table->Biginteger('kh_id')->unsigned();
-            $table->foreign('kh_id')->references('kh_id')->on('khach_hangs')->onDelete('cascade');
+            $table->foreign('kh_id')->references('kh_id')->on('khach_hang')->onDelete('cascade');
         });
     }
 

@@ -13,7 +13,7 @@ class CreateHinhAnhsTable extends Migration
      */
     public function up()
     {
-        Schema::create('hinh_anhs', function (Blueprint $table) {
+        Schema::create('hinh_anh', function (Blueprint $table) {
             $table->bigIncrements('ha_id');
             $table->string('ha_duongdan');
             $table->timestamps();

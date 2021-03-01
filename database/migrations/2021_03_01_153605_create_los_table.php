@@ -13,7 +13,7 @@ class CreateLosTable extends Migration
      */
     public function up()
     {
-        Schema::create('los', function (Blueprint $table) {
+        Schema::create('lo', function (Blueprint $table) {
             $table->bigIncrements('l_id');
             $table->dateTime('l_ngaylap');
             $table->text('l_ghichu');

@@ -13,7 +13,7 @@ class CreatePhieuNhapsTable extends Migration
      */
     public function up()
     {
-        Schema::create('phieu_nhaps', function (Blueprint $table) {
+        Schema::create('phieu_nhap', function (Blueprint $table) {
             $table->bigIncrements('pn_id');
             $table->float('pn_tongtien');
             $table->dateTime('pn_ngaylap');

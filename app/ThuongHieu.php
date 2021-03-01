@@ -4,16 +4,48 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @property integer $th_id
+ * @property string $th_ten
+ * @property string $th_logo
+ * @property string $th_ghichu
+ * @property string $created_at
+ * @property string $updated_at
+ * @property SanPham[] $sanPhams
+ */
 class ThuongHieu extends Model
 {
-    protected $table = 'thuong_hieus';
-	protected $primaryKey = 'th_id';
-	public $timestamps = false;
+    /**
+     * The table associated with the model.
+     * 
+     * @var string
+     */
+    protected $table = 'thuong_hieu';
 
+    /**
+     * The primary key for the model.
+     * 
+     * @var string
+     */
+    protected $primaryKey = 'th_id';
 
-	protected $fillable = [
-		'th_ten',
-		'th_logo',
-		'th_ghichu',
-	];
+    /**
+     * The "type" of the auto-incrementing ID.
+     * 
+     * @var string
+     */
+    protected $keyType = 'integer';
+
+    /**
+     * @var array
+     */
+    protected $fillable = ['th_ten', 'th_logo', 'th_ghichu', 'created_at', 'updated_at'];
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function sanPhams()
+    {
+        return $this->hasMany('App\SanPham', 'th_id', 'th_id');
+    }
 }

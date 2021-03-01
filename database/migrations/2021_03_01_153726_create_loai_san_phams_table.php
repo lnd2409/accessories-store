@@ -13,7 +13,7 @@ class CreateLoaiSanPhamsTable extends Migration
      */
     public function up()
     {
-        Schema::create('loai_san_phams', function (Blueprint $table) {
+        Schema::create('loai_san_pham', function (Blueprint $table) {
             $table->bigIncrements('lsp_id');
             $table->string('lsp_tenloai');
             $table->text('lsp_ghichu')->nulleble();

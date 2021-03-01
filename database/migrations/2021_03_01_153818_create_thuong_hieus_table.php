@@ -13,12 +13,12 @@ class CreateThuongHieusTable extends Migration
      */
     public function up()
     {
-        Schema::create('thuong_hieus', function (Blueprint $table) {
+        Schema::create('thuong_hieu', function (Blueprint $table) {
             $table->bigIncrements('th_id');
             $table->string('th_ten');
             $table->string('th_logo');
             $table->text('th_ghichu');
-            
+
             $table->timestamps();
         });
     }

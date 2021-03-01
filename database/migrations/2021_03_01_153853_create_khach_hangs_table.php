@@ -13,7 +13,7 @@ class CreateKhachHangsTable extends Migration
      */
     public function up()
     {
-        Schema::create('khach_hangs', function (Blueprint $table) {
+        Schema::create('khach_hang', function (Blueprint $table) {
             $table->bigIncrements('kh_id');
             $table->string('kh_hoten');
             $table->string('kh_email')->nullable();

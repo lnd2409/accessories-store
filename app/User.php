@@ -2,38 +2,48 @@
 
 namespace App;
 
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
 
-class User extends Authenticatable
+/**
+ * @property integer $l_id
+ * @property string $l_ngaylap
+ * @property string $l_ghichu
+ * @property string $created_at
+ * @property ChiTietPhieuNhap[] $chiTietPhieuNhaps
+ */
+class User extends Model
 {
-    use Notifiable;
+    /**
+     * The table associated with the model.
+     * 
+     * @var string
+     */
+    protected $table = 'lo';
 
     /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
+     * The primary key for the model.
+     * 
+     * @var string
      */
-    protected $fillable = [
-        'name', 'email', 'password',
-    ];
+    protected $primaryKey = 'l_id';
 
     /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
+     * The "type" of the auto-incrementing ID.
+     * 
+     * @var string
      */
-    protected $hidden = [
-        'password', 'remember_token',
-    ];
+    protected $keyType = 'integer';
 
     /**
-     * The attributes that should be cast to native types.
-     *
      * @var array
      */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+    protected $fillable = ['l_ngaylap', 'l_ghichu', 'created_at'];
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function chiTietPhieuNhaps()
+    {
+        return $this->hasMany('App\ChiTietPhieuNhap', 'l_id', 'l_id');
+    }
 }
