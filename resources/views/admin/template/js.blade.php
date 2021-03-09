@@ -13,9 +13,9 @@
 <!-- Sparkline -->
 <script src="{{ asset('font-end/admin') }}/plugins/sparklines/sparkline.js"></script>
 <!-- JQVMap -->
-<script src="{{ asset('font-end/admin') }}/plugins/jqvmap/jquery.vmap.min.js"></script>
+{{-- <script src="{{ asset('font-end/admin') }}/plugins/jqvmap/jquery.vmap.min.js"></script>
 <script src="{{ asset('font-end/admin') }}/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
-<!-- jQuery Knob Chart -->
+<!-- jQuery Knob Chart --> --}}
 <script src="{{ asset('font-end/admin') }}/plugins/jquery-knob/jquery.knob.min.js"></script>
 <!-- daterangepicker -->
 <script src="{{ asset('font-end/admin') }}/plugins/moment/moment.min.js"></script>
@@ -33,3 +33,4 @@
 <script src="{{ asset('font-end/admin') }}/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('font-end/admin') }}/dist/js/demo.js"></script>
+@stack('script')

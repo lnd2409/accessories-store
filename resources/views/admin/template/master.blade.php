@@ -7,6 +7,7 @@
     <title>Quản trị - @yield('title')</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     @include('admin.template.css')
 </head>
 

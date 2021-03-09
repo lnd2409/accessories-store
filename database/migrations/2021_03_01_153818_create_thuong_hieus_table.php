@@ -17,7 +17,7 @@ class CreateThuongHieusTable extends Migration
             $table->bigIncrements('th_id');
             $table->string('th_ten');
             $table->string('th_logo');
-            $table->text('th_ghichu');
+            $table->text('th_ghichu')->nullable();
 
             $table->timestamps();
         });

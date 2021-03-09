@@ -30,6 +30,26 @@
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>Bảng điều khiển</p>
                     </a>
+                    <a href="#" class="nav-link active">
+                        <i class="nav-icon "></i>
+                        <p>Thương Hiệu</p>
+                    </a>
+                    <a href="#" class="nav-link ">
+                        <i class="nav-icon "></i>
+                        <p>Loại Sản Phẩm</p>
+                    </a>
+                    <a href="#" class="nav-link ">
+                        <i class="nav-icon "></i>
+                        <p>Sản Phẩm</p>
+                    </a>
+                    <a href="#" class="nav-link ">
+                        <i class="nav-icon "></i>
+                        <p>Hóa Đơn</p>
+                    </a>
+                    <a href="#" class="nav-link ">
+                        <i class="nav-icon "></i>
+                        <p>Khách Hàng</p>
+                    </a>
                 </li>
             </ul>
         </nav>
