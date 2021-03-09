@@ -8,6 +8,7 @@
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     @include('admin.template.css')
+    @stack('lo-san-pham.view-add.css')
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -52,6 +53,10 @@
     <!-- ./wrapper -->
 
     @include('admin.template.js')
+    @stack('san-pham.index')
+    @stack('san-pham.detail')
+    @stack('thuong-hieu')
+    @stack('lo-san-pham.view-add.js')
 </body>
 
 </html>

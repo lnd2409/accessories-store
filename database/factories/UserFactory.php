@@ -1,6 +1,8 @@
 <?php
 
 use App\User;
+use App\SanPham;
+use App\LoaiSanPham;
 use Illuminate\Support\Str;
 use Faker\Generator as Faker;
 
@@ -22,5 +24,12 @@ $factory->define(User::class, function (Faker $faker) {
         'email_verified_at' => now(),
         'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
         'remember_token' => Str::random(10),
+    ];
+});
+// 'lsp_tenloai', 'lsp_ghichu', 'created_at'
+$factory->define(LoaiSanPham::class, function (Faker $faker) {
+    return [
+        'lsp_tenloai' => $faker->name,
+        'lsp_ghichu' => $faker->text,
     ];
 });

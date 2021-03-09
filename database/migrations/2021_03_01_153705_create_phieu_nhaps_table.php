@@ -18,7 +18,7 @@ class CreatePhieuNhapsTable extends Migration
             $table->float('pn_tongtien');
             $table->dateTime('pn_ngaylap');
 
-            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamps();
         });
     }
 

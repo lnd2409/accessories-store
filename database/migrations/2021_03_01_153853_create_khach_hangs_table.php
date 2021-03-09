@@ -22,7 +22,7 @@ class CreateKhachHangsTable extends Migration
             $table->string('kh_sdt');
             $table->string('username');
             $table->string('password');
-            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamps();
         });
     }
 

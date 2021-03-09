@@ -16,9 +16,9 @@ class CreateChiTietPhieuNhapsTable extends Migration
         Schema::create('chi_tiet_phieu_nhap', function (Blueprint $table) {
             $table->bigIncrements('ctpn_id');
             $table->integer('ctpn_soluong');
-            $table->float('ctpn_dongia');
+            $table->integer('ctpn_dongia');
             $table->text('ctpn_ghichu')->nullable();
-            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamps();
 
             $table->Biginteger('l_id')->unsigned();
             $table->foreign('l_id')->references('l_id')->on('lo')->onDelete('cascade');

@@ -17,7 +17,7 @@ class CreateLosTable extends Migration
             $table->bigIncrements('l_id');
             $table->dateTime('l_ngaylap');
             $table->text('l_ghichu');
-            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamps();
         });
     }
 

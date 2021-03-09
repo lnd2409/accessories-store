@@ -26,9 +26,43 @@
                 data-accordion="false">
 
                 <li class="nav-item">
-                    <a href="http://127.0.0.1:8000/font-end/admin/pages/widgets.html" class="nav-link active">
+                    <a href="{{ route('quan-tri') }}" class="nav-link
+                    @if (Request::path() == 'quan-tri')
+                        active
+                    @endif
+                    ">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>Bảng điều khiển</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('san-pham.index') }}" class="nav-link
+                    @if (Request::segment(2) == 'san-pham')
+                        active
+                    @endif
+                    ">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>Sản phẩm</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('thuong-hieu.index') }}" class="nav-link
+                    @if (Request::segment(2) == 'thuong-hieu')
+                        active
+                    @endif
+                    ">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>Thương hiệu</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('lo-san-pham.index') }}" class="nav-link
+                    @if (Request::segment(2) == 'lo-san-pham')
+                        active
+                    @endif
+                    ">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>Lô sản phẩm</p>
                     </a>
                 </li>
             </ul>

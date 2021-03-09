@@ -11,27 +11,27 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $th_ghichu
  * @property string $created_at
  * @property string $updated_at
- * @property SanPham[] $sanPhams
+ * @property DanhMucThuongHieu[] $danhMucThuongHieus
  */
 class ThuongHieu extends Model
 {
     /**
      * The table associated with the model.
-     * 
+     *
      * @var string
      */
     protected $table = 'thuong_hieu';
 
     /**
      * The primary key for the model.
-     * 
+     *
      * @var string
      */
     protected $primaryKey = 'th_id';
 
     /**
      * The "type" of the auto-incrementing ID.
-     * 
+     *
      * @var string
      */
     protected $keyType = 'integer';
@@ -44,8 +44,8 @@ class ThuongHieu extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function sanPhams()
+    public function danhMucThuongHieus()
     {
-        return $this->hasMany('App\SanPham', 'th_id', 'th_id');
+        return $this->hasMany('App\DanhMucThuongHieu', 'th_id', 'th_id');
     }
 }

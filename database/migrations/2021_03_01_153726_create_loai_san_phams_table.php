@@ -18,7 +18,7 @@ class CreateLoaiSanPhamsTable extends Migration
             $table->string('lsp_tenloai');
             $table->text('lsp_ghichu')->nulleble();
 
-            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamps();
         });
     }
 

@@ -17,7 +17,7 @@ class CreateChiTietHoaDonsTable extends Migration
             $table->bigIncrements('cthd_id');
             $table->integer('cthd_soluong');
             $table->float('cthd_dongia');
-            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamps();
 
             $table->Biginteger('hd_id')->unsigned();
             $table->foreign('hd_id')->references('hd_id')->on('hoa_don')->onDelete('cascade');

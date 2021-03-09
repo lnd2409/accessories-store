@@ -7,18 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * @property integer $sp_id
  * @property integer $lsp_id
- * @property integer $ha_id
- * @property integer $th_id
+ * @property integer $dmth_id
  * @property string $sp_tensanpham
  * @property int $sp_soluong
- * @property string $sp_ngaytao
+ * @property string $sp_mota
  * @property string $created_at
  * @property string $updated_at
- * @property HinhAnh $hinhAnh
+ * @property DanhMucThuongHieu $danhMucThuongHieu
  * @property LoaiSanPham $loaiSanPham
- * @property ThuongHieu $thuongHieu
  * @property ChiTietHoaDon[] $chiTietHoaDons
  * @property ChiTietPhieuNhap[] $chiTietPhieuNhaps
+ * @property HinhAnh[] $hinhAnhs
  */
 class SanPham extends Model
 {
@@ -46,14 +45,14 @@ class SanPham extends Model
     /**
      * @var array
      */
-    protected $fillable = ['lsp_id', 'ha_id', 'th_id', 'sp_tensanpham', 'sp_soluong', 'sp_ngaytao', 'created_at', 'updated_at'];
+    protected $fillable = ['lsp_id', 'dmth_id', 'sp_tensanpham', 'sp_soluong', 'sp_mota', 'created_at', 'updated_at'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function hinhAnh()
+    public function danhMucThuongHieu()
     {
-        return $this->belongsTo('App\HinhAnh', 'ha_id', 'ha_id');
+        return $this->belongsTo('App\DanhMucThuongHieu', 'dmth_id', 'dmth_id');
     }
 
     /**
@@ -62,14 +61,6 @@ class SanPham extends Model
     public function loaiSanPham()
     {
         return $this->belongsTo('App\LoaiSanPham', 'lsp_id', 'lsp_id');
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function thuongHieu()
-    {
-        return $this->belongsTo('App\ThuongHieu', 'th_id', 'th_id');
     }
 
     /**
@@ -86,5 +77,13 @@ class SanPham extends Model
     public function chiTietPhieuNhaps()
     {
         return $this->hasMany('App\ChiTietPhieuNhap', 'sp_id', 'sp_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function hinhAnhs()
+    {
+        return $this->hasMany('App\HinhAnh', 'sp_id', 'sp_id');
     }
 }

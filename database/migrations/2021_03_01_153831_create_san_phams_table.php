@@ -17,20 +17,12 @@ class CreateSanPhamsTable extends Migration
             $table->bigIncrements('sp_id');
             $table->string('sp_tensanpham');
             $table->integer('sp_soluong');
-            $table->dateTime('sp_ngaytao');
-
+            $table->text('sp_mota');
             $table->timestamps();
-
             $table->Biginteger('lsp_id')->unsigned();
             $table->foreign('lsp_id')->references('lsp_id')->on('loai_san_pham')->onDelete('cascade');
-
-            $table->Biginteger('ha_id')->unsigned();
-            $table->foreign('ha_id')->references('ha_id')->on('hinh_anh')->onDelete('cascade');
-
-            $table->Biginteger('th_id')->unsigned();
-            $table->foreign('th_id')->references('th_id')->on('thuong_hieu')->onDelete('cascade');
-
-
+            $table->Biginteger('dmth_id')->unsigned();
+            $table->foreign('dmth_id')->references('dmth_id')->on('danh_muc_thuong_hieu')->onDelete('cascade');
         });
     }
 
